@@ -3,7 +3,7 @@ namespace main;
 /// <summary>
 /// An interface which models a map. 
 /// </summary>
-public class MapProperties
+public interface IMapProperties
 {
     /// <summary>
     /// Returns the width of the map.
