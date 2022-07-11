@@ -6,7 +6,7 @@ namespace main;
 /// <summary>
 /// A class which implements MapProperties.
 /// </summary>
-public class MapPropertiesImpl : MapProperties
+public class MapPropertiesImpl : IMapProperties
 {
     /// <summary>
     /// A constructor for MapPropertiesImpl.
@@ -16,7 +16,8 @@ public class MapPropertiesImpl : MapProperties
     /// <param name="tileWidth">the width of a tile</param>
     /// <param name="tileHeight">the height of a tile</param>
     /// <param name="tilesets">the list of tilesets</param>
-    public MapPropertiesImpl(int width, int height, int tileWidth, int tileHeight, List<Tileset> tilesets) {
+    public MapPropertiesImpl(readonly int width, readonly int height, readonly int tileWidth, readonly int tileHeight, readonly List<Tileset> tilesets)
+    {
         Width = width;
         Height = height;
         TileWidth = tileWidth;
