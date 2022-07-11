@@ -7,12 +7,6 @@ namespace main;
 /// </summary>
 public class Tileset
 {
-    private string _fileName;
-    private int _tilesCount;
-    private int _columns;
-    private int _rows;
-    private int _firstTileId;
-
     /// <summary>
     /// A constructor for Tileset.
     /// </summary>
@@ -22,11 +16,11 @@ public class Tileset
     /// <param name="firstTileId">the ID of the first tile</param>
     public Tileset(string fileName, int tilesCount, int columns, int firstTileId)
     {
-        _fileName = fileName;
-        _tilesCount = tilesCount;
-        _columns = columns;
-        _rows = tilesCount / columns;
-        _firstTileId = firstTileId;
+        FileName = fileName;
+        TilesCount = tilesCount;
+        Columns = columns;
+        Rows = tilesCount / columns;
+        FirstTileId = firstTileId;
     }
 
     /// <summary>
