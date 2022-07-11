@@ -14,7 +14,7 @@ public class Tileset
     /// <param name="tilesCount">the number of tiles in the tileset</param>
     /// <param name="columns">the number of columns in the tileset</param>
     /// <param name="firstTileId">the ID of the first tile</param>
-    public Tileset(string fileName, int tilesCount, int columns, int firstTileId)
+    public Tileset(readonly string fileName, readonly int tilesCount, readonly int columns, readonly int firstTileId)
     {
         FileName = fileName;
         TilesCount = tilesCount;
