@@ -5,6 +5,9 @@ using System.Xml;
 
 namespace main
 {
+    /// <summary>
+    /// A class for parsing TMX files.
+    /// </summary>
     public class TMXMapParser
     {
         private readonly string _mapName;
