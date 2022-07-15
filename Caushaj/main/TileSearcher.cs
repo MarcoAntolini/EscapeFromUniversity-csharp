@@ -1,24 +1,37 @@
 using System;
-namespace main;
+using System.Linq;
 
-/// <summary>
-/// A class which implements TileSearcher.
-/// </summary>
-public class TileSearcher : ITileSearcher
+namespace main
 {
-    private readonly MapProperties _mapProperties;
-    
-    /// <summary>
-    /// A constructor for TileSearcherImpl.
-    /// </summary>
-    /// <param name="map">the map</param>
-    public TileSearcherImpl(MapProperties map)
-    {
-        _map = map;
-    }
 
-    public override Tileset SearchTileset(int id)
+    /// <summary>
+    /// A class which implements ITileSearcher.
+    /// </summary>
+    public class TileSearcher : ITileSearcher
     {
-        return null;
+        private readonly MapProperties _map;
+
+        /// <summary>
+        /// A constructor for TileSearcher.
+        /// </summary>
+        /// <param name="map">the map</param>
+        public TileSearcher(MapProperties map)
+        {
+            _map = map;
+        }
+
+        public Point2D calcTPos(int id, Tileset ts)
+        {
+            var cols = ts.Columns;
+            var idOffset = id - ts.FirstTileId;
+            var x = idOffset % cols;
+            var y = idOffset / cols;
+            return new Point2D(x, y);
+        }
+
+        public Tileset SearchTileset(int id)
+        {
+            return _map.Tilesets.TakeWhile(t => t.FirstTileId <= id).Max();
+        }
     }
 }
