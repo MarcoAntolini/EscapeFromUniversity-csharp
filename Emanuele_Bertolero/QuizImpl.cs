@@ -37,7 +37,8 @@ namespace OOP_emanuele_bertolero
         public bool GiveAnAnswer(int choice)
         {
             answered = true;
-            return answers[choice].correct;
+            correct = answers[choice].correct;
+            return correct.Value;
         }
 
         public override string ToString()
