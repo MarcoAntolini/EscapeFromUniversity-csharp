@@ -12,66 +12,71 @@ namespace OOP_daniel_capannini.Enemy
         BossFactory _bossCreate = new BossFactoryImpl();
 
         [TestMethod]
-        public void testBoss1()
+        public void TestBoss1()
         {
             Point2D pos = new Point2D(10, 5);
             Vector2D vet = new Vector2D(1, 0);
-            Boss boss = _bossCreate.createBoss1(pos, vet, null);
+            Boss boss = _bossCreate.CreateBoss1(pos, vet, null);
             Assert.IsNotNull(boss);
             Assert.AreEqual(boss.Position, pos);
             Assert.AreEqual(boss.Direction, vet);
             Assert.AreEqual(boss.Type, GameObjteType.BOSS1);
         }
 
-        public void testBoss2()
+        [TestMethod]
+        public void TestBoss2()
         {
             Point2D pos = new Point2D(10, 5);
             Vector2D vet = new Vector2D(1, 0);
-            Boss boss = _bossCreate.createBoss2(pos, vet, null);
+            Boss boss = _bossCreate.CreateBoss2(pos, vet, null);
             Assert.IsNotNull(boss);
             Assert.AreEqual(boss.Position, pos);
             Assert.AreEqual(boss.Direction, vet);
             Assert.AreEqual(boss.Type, GameObjteType.BOSS2);
         }
 
-        public void testBoss3()
+        [TestMethod]
+        public void TestBoss3()
         {
             Point2D pos = new Point2D(10, 5);
             Vector2D vet = new Vector2D(1, 0);
-            Boss boss = _bossCreate.createBoss3(pos, vet, null);
+            Boss boss = _bossCreate.CreateBoss3(pos, vet, null);
             Assert.IsNotNull(boss);
             Assert.AreEqual(boss.Position, pos);
             Assert.AreEqual(boss.Direction, vet);
             Assert.AreEqual(boss.Type, GameObjteType.BOSS3);
         }
 
-        public void testBoss4()
+        [TestMethod]
+        public void TestBoss4()
         {
             Point2D pos = new Point2D(10, 5);
             Vector2D vet = new Vector2D(1, 0);
-            Boss boss = _bossCreate.createBoss4(pos, vet, null);
+            Boss boss = _bossCreate.CreateBoss4(pos, vet, null);
             Assert.IsNotNull(boss);
             Assert.AreEqual(boss.Position, pos);
             Assert.AreEqual(boss.Direction, vet);
             Assert.AreEqual(boss.Type, GameObjteType.BOSS4);
         }
 
-        public void testBoss5()
+        [TestMethod]
+        public void TestBoss5()
         {
             Point2D pos = new Point2D(10, 5);
             Vector2D vet = new Vector2D(1, 0);
-            Boss boss = _bossCreate.createBoss5(pos, vet, null);
+            Boss boss = _bossCreate.CreateBoss5(pos, vet, null);
             Assert.IsNotNull(boss);
             Assert.AreEqual(boss.Position, pos);
             Assert.AreEqual(boss.Direction, vet);
             Assert.AreEqual(boss.Type, GameObjteType.BOSS5);
         }
 
-        public void testBoss6()
+        [TestMethod]
+        public void TestBoss6()
         {
             Point2D pos = new Point2D(10, 5);
             Vector2D vet = new Vector2D(1, 0);
-            Boss boss = _bossCreate.createBoss6(pos, vet, null);
+            Boss boss = _bossCreate.CreateBoss6(pos, vet, null);
             Assert.IsNotNull(boss);
             Assert.AreEqual(boss.Position, pos);
             Assert.AreEqual(boss.Direction, vet);

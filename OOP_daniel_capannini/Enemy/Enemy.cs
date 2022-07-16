@@ -10,8 +10,8 @@ namespace OOP_daniel_capannini.Enemy
     {
         int Life { get; }
 
-        void maybeShoot(double deltaTime);
+        void MaybeShoot(double deltaTime);
 
-        void takeDamage(int damage);
+        void TakeDamage(int damage);
     }
 }

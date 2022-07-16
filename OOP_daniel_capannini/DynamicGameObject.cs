@@ -8,14 +8,12 @@ namespace OOP_daniel_capannini
 {
     //partial implementation, created only out of necessity
 
-    public class Vector2D : Point2D
+    public interface DynamicGameObject : GameObject
     {
-        public Vector2D(double x, double y) : base(x, y)
-        {
+        double Speed { get; }
+        Vector2D Direction { get; set; }
+        State State { get; set; }
+        void Update(double deltaTime);
 
-        }
-        public Vector2D normal() => this;
-
-        public new Vector2D multiplication(double mul) => this;
     }
 }

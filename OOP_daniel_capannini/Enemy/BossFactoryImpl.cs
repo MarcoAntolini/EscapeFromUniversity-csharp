@@ -21,7 +21,7 @@ namespace OOP_daniel_capannini.Enemy
         private static Vector2D _vector2 = new Vector2D(-50, -50);
 
 
-        public Boss createBoss1(Point2D position, Vector2D direction, GameInit map) => new Boss1(_bossSpeed, position, _hitBoxSize, direction, GameObjteType.BOSS1, _bossLife, _bossShootDelay, _bossDamage, _bossExam, map);
+        public Boss CreateBoss1(Point2D position, Vector2D direction, GameInit map) => new Boss1(_bossSpeed, position, _hitBoxSize, direction, GameObjteType.BOSS1, _bossLife, _bossShootDelay, _bossDamage, _bossExam, map);
 
         private class Boss1 : AbstractBoss
         {
@@ -29,10 +29,10 @@ namespace OOP_daniel_capannini.Enemy
             {
             }
 
-            public override void shoot() => this.Map.addDynamicGameObject(_bulletCreate.createBoss1Bullet(this.Position, newDirection(), Map));
+            public override void Shoot() => this.Map.AddDynamicGameObject(_bulletCreate.CreateBoss1Bullet(this.Position, NewDirection(), Map));
         }
 
-        public Boss createBoss2(Point2D position, Vector2D direction, GameInit map) => new Boss2(_bossSpeed, position, _hitBoxSize, direction, GameObjteType.BOSS2, _bossLife, _bossShootDelay, _bossDamage, _bossExam, map);
+        public Boss CreateBoss2(Point2D position, Vector2D direction, GameInit map) => new Boss2(_bossSpeed, position, _hitBoxSize, direction, GameObjteType.BOSS2, _bossLife, _bossShootDelay, _bossDamage, _bossExam, map);
 
         private class Boss2 : AbstractBoss
         {
@@ -40,19 +40,19 @@ namespace OOP_daniel_capannini.Enemy
             {
             }
 
-            public override void shoot()
+            public override void Shoot()
             {
                 List<Bullet.Bullet> bullets = new List<Bullet.Bullet>();
-                bullets.Add(_bulletCreate.createBoss2Bullet(this.Position, newDirection(), Map));
-                bullets.Add(_bulletCreate.createBoss2Bullet(this.Position.sum(_vector1), newDirection(), Map));
-                bullets.Add(_bulletCreate.createBoss2Bullet(this.Position.sum(_vector2), newDirection(), Map));
+                bullets.Add(_bulletCreate.CreateBoss2Bullet(this.Position, NewDirection(), Map));
+                bullets.Add(_bulletCreate.CreateBoss2Bullet(this.Position.Sum(_vector1), NewDirection(), Map));
+                bullets.Add(_bulletCreate.CreateBoss2Bullet(this.Position.Sum(_vector2), NewDirection(), Map));
                 bullets.ForEach(bul => {
-                    this.Map.addDynamicGameObject(bul);
+                    this.Map.AddDynamicGameObject(bul);
                 });
             }
         }
 
-        public Boss createBoss3(Point2D position, Vector2D direction, GameInit map) => new Boss3(_bossSpeed, position, _hitBoxSize, direction, GameObjteType.BOSS3, _bossLife, _bossShootDelay, _bossDamage, _bossExam, map);
+        public Boss CreateBoss3(Point2D position, Vector2D direction, GameInit map) => new Boss3(_bossSpeed, position, _hitBoxSize, direction, GameObjteType.BOSS3, _bossLife, _bossShootDelay, _bossDamage, _bossExam, map);
 
         private class Boss3 : AbstractBoss
         {
@@ -60,24 +60,24 @@ namespace OOP_daniel_capannini.Enemy
             {
             }
 
-            public override void shoot()
+            public override void Shoot()
             {
                 List<Bullet.Bullet> bullets = new List<Bullet.Bullet>();
-                bullets.Add(_bulletCreate.createBoss3Bullet(this.Position, new Vector2D(0, 1), Map));
-                bullets.Add(_bulletCreate.createBoss3Bullet(this.Position, new Vector2D(0, -1), Map));
-                bullets.Add(_bulletCreate.createBoss3Bullet(this.Position, new Vector2D(1, 1).normal(), Map));
-                bullets.Add(_bulletCreate.createBoss3Bullet(this.Position, new Vector2D(-1, 1).normal(), Map));
-                bullets.Add(_bulletCreate.createBoss3Bullet(this.Position, new Vector2D(1, -1).normal(), Map));
-                bullets.Add(_bulletCreate.createBoss3Bullet(this.Position, new Vector2D(-1, -1).normal(), Map));
-                bullets.Add(_bulletCreate.createBoss3Bullet(this.Position, new Vector2D(1, 0), Map));
-                bullets.Add(_bulletCreate.createBoss3Bullet(this.Position, new Vector2D(1, 0), Map));
+                bullets.Add(_bulletCreate.CreateBoss3Bullet(this.Position, new Vector2D(0, 1), Map));
+                bullets.Add(_bulletCreate.CreateBoss3Bullet(this.Position, new Vector2D(0, -1), Map));
+                bullets.Add(_bulletCreate.CreateBoss3Bullet(this.Position, new Vector2D(1, 1).Normal(), Map));
+                bullets.Add(_bulletCreate.CreateBoss3Bullet(this.Position, new Vector2D(-1, 1).Normal(), Map));
+                bullets.Add(_bulletCreate.CreateBoss3Bullet(this.Position, new Vector2D(1, -1).Normal(), Map));
+                bullets.Add(_bulletCreate.CreateBoss3Bullet(this.Position, new Vector2D(-1, -1).Normal(), Map));
+                bullets.Add(_bulletCreate.CreateBoss3Bullet(this.Position, new Vector2D(1, 0), Map));
+                bullets.Add(_bulletCreate.CreateBoss3Bullet(this.Position, new Vector2D(1, 0), Map));
                 bullets.ForEach(bul => {
-                    this.Map.addDynamicGameObject(bul);
+                    this.Map.AddDynamicGameObject(bul);
                 });
             }
         }
 
-        public Boss createBoss4(Point2D position, Vector2D direction, GameInit map) => new Boss4(_bossSpeed, position, _hitBoxSize, direction, GameObjteType.BOSS4, _bossLife, _bossShootDelay, _bossDamage, _bossExam, map);
+        public Boss CreateBoss4(Point2D position, Vector2D direction, GameInit map) => new Boss4(_bossSpeed, position, _hitBoxSize, direction, GameObjteType.BOSS4, _bossLife, _bossShootDelay, _bossDamage, _bossExam, map);
 
         private class Boss4 : AbstractBoss
         {
@@ -85,10 +85,10 @@ namespace OOP_daniel_capannini.Enemy
             {
             }
 
-            public override void shoot() => this.Map.addDynamicGameObject(_bulletCreate.createBoss1Bullet(this.Position, newDirection(), Map));
+            public override void Shoot() => this.Map.AddDynamicGameObject(_bulletCreate.CreateBoss1Bullet(this.Position, NewDirection(), Map));
         }
 
-        public Boss createBoss5(Point2D position, Vector2D direction, GameInit map) => new Boss5(_bossSpeed, position, _hitBoxSize, direction, GameObjteType.BOSS5, _bossLife, _bossShootDelay, _bossDamage, _bossExam, map);
+        public Boss CreateBoss5(Point2D position, Vector2D direction, GameInit map) => new Boss5(_bossSpeed, position, _hitBoxSize, direction, GameObjteType.BOSS5, _bossLife, _bossShootDelay, _bossDamage, _bossExam, map);
 
         private class Boss5 : AbstractBoss
         {
@@ -96,10 +96,10 @@ namespace OOP_daniel_capannini.Enemy
             {
             }
 
-            public override void shoot() => this.Map.addDynamicGameObject(_bulletCreate.createBoss1Bullet(this.Position, newDirection(), Map));
+            public override void Shoot() => this.Map.AddDynamicGameObject(_bulletCreate.CreateBoss1Bullet(this.Position, NewDirection(), Map));
         }
 
-        public Boss createBoss6(Point2D position, Vector2D direction, GameInit map) => new Boss6(_bossSpeed, position, _hitBoxSize, direction, GameObjteType.BOSS6, _bossLife, _bossShootDelay, _bossDamage, _bossExam, map);
+        public Boss CreateBoss6(Point2D position, Vector2D direction, GameInit map) => new Boss6(_bossSpeed, position, _hitBoxSize, direction, GameObjteType.BOSS6, _bossLife, _bossShootDelay, _bossDamage, _bossExam, map);
 
         private class Boss6 : AbstractBoss
         {
@@ -107,7 +107,7 @@ namespace OOP_daniel_capannini.Enemy
             {
             }
 
-            public override void shoot() => this.Map.addDynamicGameObject(_bulletCreate.createBoss1Bullet(this.Position, newDirection(), Map));
+            public override void Shoot() => this.Map.AddDynamicGameObject(_bulletCreate.CreateBoss1Bullet(this.Position, NewDirection(), Map));
         }
 
     }

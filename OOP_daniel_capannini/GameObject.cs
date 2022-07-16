@@ -21,9 +21,9 @@ namespace OOP_daniel_capannini
         GameCollisionType CollisionType { get; }
 
         HitBox GetHitBox();
-        void collisionWith(GameObject gObj2);
+        void CollisionWith(GameObject gObj2);
 
-        bool collisionWithCheck(GameObject gObj2);
+        bool CollisionWithCheck(GameObject gObj2);
 
     }
 }

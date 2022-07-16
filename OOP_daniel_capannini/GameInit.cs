@@ -13,13 +13,13 @@ namespace OOP_daniel_capannini
 {
         Player Player { get; }
 
-        void deleteGameObject(GameObject gObj2);
+        void DeleteGameObject(GameObject gObj2);
 
         State State { get; set; }
 
-        void goQuiz(Enemy.Boss boss);
+        void GoQuiz(Enemy.Boss boss);
 
-        void addDynamicGameObject(DynamicGameObject dObj);
+        void AddDynamicGameObject(DynamicGameObject dObj);
 
     }
 }

@@ -8,13 +8,14 @@ namespace OOP_daniel_capannini
 {
     //partial implementation, created only out of necessity
 
-    public interface Player : DynamicGameObject
+    public class Vector2D : Point2D
     {
-        void setFinalMark(int result);
+        public Vector2D(double x, double y) : base(x, y)
+        {
 
-        void increaseCredits(int credits);
+        }
+        public Vector2D Normal() => this;
 
-        void takeDamage(int damage);
-
+        public new Vector2D Multiplication(double mul) => this;
     }
 }

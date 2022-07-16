@@ -33,14 +33,14 @@ namespace OOP_daniel_capannini
 
         public GameCollisionType CollisionType { get; }
 
-        public void move(double deltaTime)
+        public void Move(double deltaTime)
         {
 
         }
 
-        public abstract void update(double deltaTime);
-        public abstract void collisionWith(GameObject gObj2);
-        public bool collisionWithCheck(GameObject gObj2) => true;
+        public abstract void Update(double deltaTime);
+        public abstract void CollisionWith(GameObject gObj2);
+        public bool CollisionWithCheck(GameObject gObj2) => true;
 
         HitBox GameObject.GetHitBox()
         {

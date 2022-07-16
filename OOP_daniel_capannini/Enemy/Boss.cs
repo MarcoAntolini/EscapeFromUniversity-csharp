@@ -17,10 +17,10 @@ namespace OOP_daniel_capannini.Enemy
 
         string BossExam { get; }
 
-        void setQuizResult(int result);
+        void SetQuizResult(int result);
 
-        void kill();
+        void Kill();
 
-        void setQuizCredits(int credits);
+        void SetQuizCredits(int credits);
     }
 }

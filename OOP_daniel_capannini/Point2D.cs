@@ -19,12 +19,12 @@ namespace OOP_daniel_capannini
             Y = Y;
         }
 
-        public Point2D multiplication(double mul) => this;
+        public Point2D Multiplication(double mul) => this;
 
-        public Point2D sum(Point2D point) => this;
+        public Point2D Sum(Point2D point) => this;
 
-        public Point2D subtract(Point2D point) => this;
+        public Point2D Subtract(Point2D point) => this;
 
-        public double module(Point2D point) => 0;
+        public double Module(Point2D point) => 0;
     }
 }

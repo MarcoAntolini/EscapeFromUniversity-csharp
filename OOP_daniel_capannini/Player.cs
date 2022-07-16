@@ -8,12 +8,13 @@ namespace OOP_daniel_capannini
 {
     //partial implementation, created only out of necessity
 
-    public interface DynamicGameObject : GameObject
+    public interface Player : DynamicGameObject
     {
-        double Speed { get; }
-        Vector2D Direction { get; set; }
-        State State { get; set; }
-        void update(double deltaTime);
+        void SetFinalMark(int result);
+
+        void IncreaseCredits(int credits);
+
+        void TakeDamage(int damage);
 
     }
 }

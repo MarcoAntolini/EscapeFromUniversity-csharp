@@ -16,7 +16,7 @@ namespace OOP_daniel_capannini.Bullet
         {
             Point2D pos = new Point2D(10, 5);
             Vector2D vet = new Vector2D(1, 0);
-            Bullet bull = _bulletCreate.createBoss1Bullet(pos, vet, null);
+            Bullet bull = _bulletCreate.CreateBoss1Bullet(pos, vet, null);
             Assert.IsNotNull(bull);
             Assert.AreEqual(bull.Position, pos);
             Assert.AreEqual(bull.Direction, vet);
@@ -28,7 +28,7 @@ namespace OOP_daniel_capannini.Bullet
         {
             Point2D pos = new Point2D(10, 5);
             Vector2D vet = new Vector2D(1, 0);
-            Bullet bull = _bulletCreate.createBoss2Bullet(pos, vet, null);
+            Bullet bull = _bulletCreate.CreateBoss2Bullet(pos, vet, null);
             Assert.IsNotNull(bull);
             Assert.AreEqual(bull.Position, pos);
             Assert.AreEqual(bull.Direction, vet);
@@ -40,7 +40,7 @@ namespace OOP_daniel_capannini.Bullet
         {
             Point2D pos = new Point2D(10, 5);
             Vector2D vet = new Vector2D(1, 0);
-            Bullet bull = _bulletCreate.createBoss3Bullet(pos, vet, null);
+            Bullet bull = _bulletCreate.CreateBoss3Bullet(pos, vet, null);
             Assert.IsNotNull(bull);
             Assert.AreEqual(bull.Position, pos);
             Assert.AreEqual(bull.Direction, vet);
@@ -52,7 +52,7 @@ namespace OOP_daniel_capannini.Bullet
         {
             Point2D pos = new Point2D(10, 5);
             Vector2D vet = new Vector2D(1, 0);
-            Bullet bull = _bulletCreate.createBoss4Bullet(pos, vet, null);
+            Bullet bull = _bulletCreate.CreateBoss4Bullet(pos, vet, null);
             Assert.IsNotNull(bull);
             Assert.AreEqual(bull.Position, pos);
             Assert.AreEqual(bull.Direction, vet);
@@ -64,7 +64,7 @@ namespace OOP_daniel_capannini.Bullet
         {
             Point2D pos = new Point2D(10, 5);
             Vector2D vet = new Vector2D(1, 0);
-            Bullet bull = _bulletCreate.createBoss5Bullet(pos, vet, null);
+            Bullet bull = _bulletCreate.CreateBoss5Bullet(pos, vet, null);
             Assert.IsNotNull(bull);
             Assert.AreEqual(bull.Position, pos);
             Assert.AreEqual(bull.Direction, vet);
@@ -76,7 +76,7 @@ namespace OOP_daniel_capannini.Bullet
         {
             Point2D pos = new Point2D(10, 5);
             Vector2D vet = new Vector2D(1, 0);
-            Bullet bull = _bulletCreate.createBoss6Bullet(pos, vet, null);
+            Bullet bull = _bulletCreate.CreateBoss6Bullet(pos, vet, null);
             Assert.IsNotNull(bull);
             Assert.AreEqual(bull.Position, pos);
             Assert.AreEqual(bull.Direction, vet);
