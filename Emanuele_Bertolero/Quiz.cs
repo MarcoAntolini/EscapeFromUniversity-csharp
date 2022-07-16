@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace OOP_emanuele_bertolero
 {
-    interface Quiz
+    public interface Quiz
     {
         int GetID();
 
         Question question { get; }
 
-        Dictonary<int, Answer> GetAllAnswers();
+        Dictionary<int, Answer> GetAllAnswers();
 
         bool HasBeenAnswered();
 
-        Optional<bool> HasAnsweredWell();
+        bool? HasAnsweredWell();
 
         bool GiveAnAnswer(int choice);
     }

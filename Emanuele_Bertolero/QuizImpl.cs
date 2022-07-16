@@ -8,25 +8,25 @@ namespace OOP_emanuele_bertolero
 {
     class QuizImpl : Quiz
     {
-        private readonly Question question { get; }
-        private readonly Dictionary<int, Answer> anwsers;
+        public Question question { get; }
+        private Dictionary<int, Answer> answers;
         private bool answered;
         private bool? correct;
 
-        private QuizImpl(Question question, Dictionary<int, Answer> anwsers)
+        private QuizImpl(Question question, Dictionary<int, Answer> answers)
         {
             this.question = question;
-            this.anwsers = anwsers;
+            this.answers = answers;
         }
 
-        public override int GetID()
+        public int GetID()
         {
-            return question.getID();
+            return question.id;
         }
 
-        public Dictonary<int, Answer> GetAllAnswers()
+        public Dictionary<int, Answer> GetAllAnswers()
         {
-            return anwsers;
+            return answers;
         }
 
         public bool HasBeenAnswered()
@@ -37,23 +37,22 @@ namespace OOP_emanuele_bertolero
         public bool GiveAnAnswer(int choice)
         {
             answered = true;
-            correct = Optional.of(anwsers.get(choice).isCorrect());
-            return correct.get();
+            return answers[choice].correct;
         }
 
         public override string ToString()
         {
-            return "[Quiz n." + GetID() + "] " + question.ToString() + GetAllAnwsers().ToString();
+            return "[Quiz n." + GetID() + "] " + question.ToString() + GetAllAnswers().ToString();
         }
-        public override Optional<Boolean> hasAnsweredWell()
+        public bool? HasAnsweredWell()
         {
             return correct;
         }
 
-        public static class Builder : QuizBuilder
+        public class Builder : QuizBuilder
         {
             private Question question;
-            private Dictionary<int, Answer> anwsers = new Dictionary<int, Answer>();
+            private Dictionary<int, Answer> answers = new Dictionary<int, Answer>();
 
             public Builder(Question question)
             {
@@ -62,7 +61,7 @@ namespace OOP_emanuele_bertolero
 
             public QuizBuilder AddAnswer(Answer anwser)
             {
-                anwsers.put(anwser.getId(), anwser);
+                answers.Add(anwser.id, anwser);
                 return this;
             }
             
@@ -72,15 +71,15 @@ namespace OOP_emanuele_bertolero
                 {
                     throw new InvalidOperationException("This quiz does not have a correctly set question");
                 }
-                if (anwsers.values().stream().filter(ans->ans.isCorrect()).count() != 1)
+                if (answers.Values.Where(ans => ans.correct).Count() != 1)
                 {
                     throw new InvalidOperationException("In each quiz there must be one and only one correct answer");
                 }
-                if (anwsers.size() != 4)
+                if (answers.Count != 4)
                 {
                     throw new InvalidOperationException("This quiz does not have exactly 4 answers");
                 }
-                return new QuizImpl(question, anwsers);
+                return new QuizImpl(question, answers);
             }
 
         }

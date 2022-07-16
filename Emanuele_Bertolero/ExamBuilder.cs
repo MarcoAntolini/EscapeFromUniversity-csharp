@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_emanuele_bertolero
 {
-    interface ExamBuilder
+    public interface ExamBuilder
     {
         ExamBuilder AddQuiz(Quiz quiz);
 

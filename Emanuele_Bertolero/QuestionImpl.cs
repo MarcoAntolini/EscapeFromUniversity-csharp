@@ -8,8 +8,8 @@ namespace OOP_emanuele_bertolero
 {
     class QuestionImpl : Question
     {
-        private readonly int id { get; }
-        private readonly string text { get; }
+        public int id { get; }
+        public string text { get; }
         public QuestionImpl(int id, string text)
         {
             this.id = id;

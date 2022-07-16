@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_emanuele_bertolero
 {
-    interface Question
+    public interface Question
     {
         int id { get; }
 

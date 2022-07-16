@@ -8,13 +8,13 @@ namespace OOP_emanuele_bertolero
 {
     class ExamImpl : Exam
     {
-        private readonly Dictionary<int, Quiz> exam;
-        private readonly string teacherName { get; }
-        private readonly string subjectName { get; }
-        private readonly int credits { get; }
+        private Dictionary<int, Quiz> exam;
+        public string teacherName { get; }
+        public string subjectName { get; }
+        public int credits { get; }
         private int currentQuiz;
-        private static readonly int MAXSCORE = 30;
-        private static readonly int PASSEDSCORE = 18;
+        private static int MAXSCORE = 30;
+        private static int PASSEDSCORE = 18;
 
         public ExamImpl(Dictionary<int, Quiz> exam, string teacherName, string subjectName, int credits)
         {
@@ -26,8 +26,7 @@ namespace OOP_emanuele_bertolero
 
         private int CompletedQuiz()
         {
-
-            return (int)exam.entrySet().stream().filter(q->q.getValue().hasBeenAnswered()).count();
+            return exam.Values.Where(q => q.HasBeenAnswered()).Count();
         }
 
         public Quiz GetNextQuiz()
@@ -43,12 +42,12 @@ namespace OOP_emanuele_bertolero
 
         public double GetProgress()
         {
-            return (double)((double)(this.completedQuiz()) / exam.size());
+            return (double)((double)(this.CompletedQuiz()) / exam.Count);
         }
 
         public int GetGrade()
         {
-            return (int)this.getMaxGrade() / this.getTotal() * (int)this.exam.entrySet().stream().filter(q->q.getValue().hasBeenAnswered() && q.getValue().hasAnsweredWell().get()).count();
+            return (int)this.GetMaxGrade() / this.GetTotal() * (int)exam.Values.Where(q => q.HasBeenAnswered() && q.HasAnsweredWell().Value).Count();         
         }
 
         public int GetMaxGrade()
@@ -58,12 +57,12 @@ namespace OOP_emanuele_bertolero
 
         public int GetTotal()
         {
-            return exam.size();
+            return exam.Count;
         }
 
         public bool HasPassed()
         {
-            return this.getGrade() >= PASSEDSCORE;
+            return this.GetGrade() >= PASSEDSCORE;
         }
 
         public class Builder : ExamBuilder
@@ -75,13 +74,13 @@ namespace OOP_emanuele_bertolero
 
             public ExamBuilder AddQuiz(Quiz quiz)
             {
-                if (exam.ContainsKey(quiz.getID()))
+                if (exam.ContainsKey(quiz.GetID()))
                 {
                     throw new InvalidOperationException("There is already a quiz with id " + quiz.GetID() + " in this package");
                 }
                 else
                 {
-                    exam.Add(quiz.getID(), quiz);
+                    exam.Add(quiz.GetID(), quiz);
                 }
                 return this;
             }
@@ -92,19 +91,19 @@ namespace OOP_emanuele_bertolero
                 return this;
             }
 
-            public ExamBuilder setCredits(int credits)
+            public ExamBuilder SetCredits(int credits)
             {
                 this.credits = credits;
                 return this;
             }
 
-            public ExamBuilder setSubject(string subjectName)
+            public ExamBuilder SetSubject(string subjectName)
             {
                 this.subjectName = subjectName;
                 return this;
             }
 
-            public override Exam build()
+            public Exam Build()
             {
                 if (this.teacherName == null)
                 {
@@ -118,7 +117,7 @@ namespace OOP_emanuele_bertolero
                 {
                     throw new InvalidOperationException("This competition does not have a correctly set subject");
                 }
-                if (this.exam.size() < 1)
+                if (this.exam.Count < 1)
                 {
                     throw new InvalidOperationException("This competition must have at least one quiz");
                 }

@@ -8,9 +8,9 @@ namespace OOP_emanuele_bertolero
 {
     class AnswerImpl : Answer
     {
-        private readonly int id { get; }
-        private readonly string text { get; }
-        private readonly bool correct { get; }
+        public int id { get; }
+        public string text { get; }
+        public bool correct { get; }
 
         public AnswerImpl(int id, string text, bool correct)
         {

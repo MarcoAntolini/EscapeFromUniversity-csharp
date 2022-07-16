@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace OOP_emanuele_bertolero
 {
-    interface QuizBuilder
+    public interface QuizBuilder
     {
-
         QuizBuilder AddAnswer(Answer anwser);
-
         Quiz Build();
-
     }
 }

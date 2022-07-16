@@ -16,7 +16,7 @@ namespace OOP_emanuele_bertolero
 
 		Quiz GetNextQuiz();
 
-		boolean HasNextQuiz();
+		bool HasNextQuiz();
 
 		double GetProgress();
 
