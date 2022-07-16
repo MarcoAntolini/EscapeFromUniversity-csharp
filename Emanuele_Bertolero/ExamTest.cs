@@ -11,10 +11,12 @@ namespace Emanuele_Bertolero
     [TestClass]
     public class ExamTest
     {
+
+
         [TestMethod]
         public void TestAnswerConstraint()
         {
-            QuizBuilder qb = new QuizImpl.Builder(new QuestionImpl(1, "Which animal has less than 4 legs?"));
+            QuizBuilder qb = new QuizImpl.Builder(new QuestionImpl(1, "Quale animale ha meno di 4 zampe?"));
             qb.AddAnswer(new AnswerImpl(2, "Gatto", false));
             qb.AddAnswer(new AnswerImpl(3, "Canarino", true));
             Assert.ThrowsException<System.InvalidOperationException>(() => qb.Build());
